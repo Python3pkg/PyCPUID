@@ -9,7 +9,7 @@
 # allowing setup.py and Sphinx to get at the meta data prior to the C extension
 # being built.
 try:
-    from pycpuid import *
+    from .pycpuid import *
 except ImportError:
     pass
 

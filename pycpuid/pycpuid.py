@@ -53,7 +53,7 @@ def brand_id():
 def brand_string():
     a = cpuid(EXTENDED_OFFSET)
     assert a >= (EXTENDED_OFFSET | 0x4), "brand string is not supported by this CPU"
-    s = ''.join([_struct.pack("IIII", *cpuid(EXTENDED_OFFSET | k)) for k in 0x2, 0x3, 0x4])
+    s = ''.join([_struct.pack("IIII", *cpuid(EXTENDED_OFFSET | k)) for k in (0x2, 0x3, 0x4)])
     return s[:s.index('\0')]
 
 
@@ -134,11 +134,11 @@ def _init():
 _init()
 
 if __name__ == "__main__":
-    print "Vendor:", vendor()
-    print "Stepping ID:", stepping_id()
-    print "Model:", hex(model())
-    print "Family:", family()
-    print "Processor Type:", processor_type()
-    print "Brand ID:", hex(brand_id())
-    print "Brand String:", brand_string()
-    print "Features:", features()
+    print("Vendor:", vendor())
+    print("Stepping ID:", stepping_id())
+    print("Model:", hex(model()))
+    print("Family:", family())
+    print("Processor Type:", processor_type())
+    print("Brand ID:", hex(brand_id()))
+    print("Brand String:", brand_string())
+    print("Features:", features())
